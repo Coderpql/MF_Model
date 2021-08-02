@@ -1,0 +1,10 @@
+ITCF:
+  lambd: 1
+  row: 0.5
+  alpha: 0.01
+  beta: 0.01
+  d: 20
+  w_p: 2
+  w_n: 1
+  EPOCH: 50
+  LR: 0.01
