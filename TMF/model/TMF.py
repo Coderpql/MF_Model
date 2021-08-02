@@ -196,7 +196,7 @@ class TMF(object):
                                                    self.alpha * v_i)
                     self.W[user] = v_w
                     self.V[item] = v_i
-                self.LR *= 0.9
+            self.LR *= 0.9
 
             # metric
             mae /= len(self.dataset_target.index)
