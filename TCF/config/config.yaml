@@ -1,0 +1,19 @@
+CMTF:
+  alpha_u: 0.01
+  alpha_v: 0.01
+  beta: 0.01
+  d: 10
+  lambda: 0.7
+  EPOCH_UV: 50
+  EPOCH_B: 50
+  process: 48
+
+CSVD:
+  alpha_u: 0.01
+  alpha_v: 0.01
+  beta: 0.01
+  d: 10
+  lambda: 0.5
+  EPOCH_UV: 50
+  EPOCH_B: 50
+  process: 48
