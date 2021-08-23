@@ -83,7 +83,7 @@ class CMTF(object):
         :return:
         '''
         # estimate B
-        X = []
+        X = []  # shape: (p, d^2)
         r = []
         i = 0
 
@@ -223,7 +223,7 @@ class CMTF(object):
                     l_users = self.rating_v_T.loc[item, self.columns[0]][0]
                     l_ratings = self.rating_v_T.loc[item, self.columns[2]][0]
                     for i in range(len(l_users)):
-                        v_u = self.V[l_users[i]].reshape(1, -1)
+                        v_u = self.U[l_users[i]].reshape(1, -1)
                         r_ui = float(l_ratings[i] - 1) / 4
 
                         C_i += np.dot(np.dot(np.dot(self.B.T, v_u.T), v_u), self.B) + self.alpha_v * np.eye(self.d)
@@ -233,7 +233,7 @@ class CMTF(object):
                     l_users = self.rating_v_S.loc[item, self.columns[0]][0]
                     l_ratings = self.rating_v_S.loc[item, self.columns[2]][0]
                     for j in range(len(l_users)):
-                        v_u = self.V[l_users[j]].reshape(1, -1)
+                        v_u = self.U[l_users[j]].reshape(1, -1)
                         r_ui_ = l_ratings[j]
 
                         C_i += self.lambd * np.dot(np.dot(np.dot(self.B_.T, v_u.T), v_u),
@@ -265,9 +265,9 @@ class CMTF(object):
         for user, item, score in self.dataset_target.itertuples(index=False):
             v_u = self.U[user].reshape(1, -1)
             v_v = self.V[item].reshape(1, -1)
-            r_ui = score
+            r_ui = (score - 1) / 4
             e_ui = r_ui - np.dot(np.dot(v_u, self.B), v_v.T)[0, 0]
-            err = r_ui - (np.dot(np.dot(v_u, self.B), v_v.T)[0, 0] * 4 + 1)
+            err = score - (np.dot(np.dot(v_u, self.B), v_v.T)[0, 0] * 4 + 1)
             mae += np.abs(err)
             rmse += np.square(err)
             loss_T += 0.5 * np.square(e_ui) + 0.5 * self.alpha_u * np.square(np.linalg.norm(v_u)) + \
