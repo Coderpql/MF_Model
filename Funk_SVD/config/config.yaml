@@ -1,0 +1,6 @@
+FUNK_SVD:
+  alpha: 0.001
+  lambda: [1000, 100, 10, 1, 0.1, 0.01, 0.001]
+  d: [5, 10, 15, 20, 25, 30, 35, 40]
+  EPOCH: 50
+  columns: ['user_id', 'items_id', 'score']
