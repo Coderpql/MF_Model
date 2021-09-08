@@ -1,6 +1,6 @@
 # MF_Model
 
-- UV
+- Funk_SVD
 
 - UBV
 
