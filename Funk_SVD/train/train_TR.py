@@ -24,7 +24,7 @@ if __name__ == '__main__':
         config = yaml.load(config, yaml.FullLoader)['FUNK_SVD']
 
         # create model
-        model = FUNK_SVD(config, data_train, 2, 1)
+        model = FUNK_SVD(config, data_train, 2, 6)
 
         # train
         path_log = '../res/log/'
@@ -34,15 +34,9 @@ if __name__ == '__main__':
         mae, rmse = model.test(data_test)
         print('Test  mae: {:.4f}, rmse: {:.4f}'.format(mae, rmse))
         # save
-        model_file = open("../res/model/FUNK_SVD_model.pkl", "wb")
+        model_file = open("../res/model/FUNK_SVD_model_TR" + str(TR) + ".pkl", "wb")
         pickle.dump(model, model_file)
         model_file.close()
-
-        # load model
-        model_file = open("../res/model/FUNK_SVD_model.pkl", "rb")
-        model = pickle.load(model_file)
-        mae, rmse = model.test(data_test)
-        print('Test  mae: {:.4f}, rmse: {:.4f}'.format(mae, rmse))
 
         # save the result
         result_slice = pd.DataFrame(
