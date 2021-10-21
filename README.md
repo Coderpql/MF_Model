@@ -6,7 +6,7 @@
 
 矩阵分解算法
 
-http://chart.googleapis.com/chart?cht=tx&chl= R=PQ^T
+$R=PQ^T$
 
 - UV
 
