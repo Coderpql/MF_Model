@@ -33,9 +33,9 @@ $$
 相关更新公式如下：
 $$
 \begin{aligned}
-V_{i j} & \leftarrow V_{i j} \sqrt{\frac{\left(M^{t} U B\right)_{i j}}{\left(V V^{t} M^{t} U B\right)_{i j}}} \\
-U_{i j} & \leftarrow U_{i j} \sqrt{\frac{\left(M V B^{t}\right)_{i j}}{\left(U U^{t} M V B^{t}\right)_{i j}}} \\
-B_{i j} & \leftarrow B_{i j} \sqrt{\frac{\left(U^{t} M V\right)_{i j}}{\left(U^{t} U B V^{t} V\right)_{i j}}}
+&V_{i j}  \leftarrow V_{i j} \sqrt{\frac{\left(M^{t} U B\right)_{i j}}{\left(V V^{t} M^{t} U B\right)_{i j}}} \\
+&U_{i j}  \leftarrow U_{i j} \sqrt{\frac{\left(M V B^{t}\right)_{i j}}{\left(U U^{t} M V B^{t}\right)_{i j}}} \\
+&B_{i j}  \leftarrow B_{i j} \sqrt{\frac{\left(U^{t} M V\right)_{i j}}{\left(U^{t} U B V^{t} V\right)_{i j}}}
 \end{aligned}
 $$
 
